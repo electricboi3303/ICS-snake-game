@@ -105,8 +105,10 @@ while running == True:
         pygame.draw.rect(screen, red, pygame.Rect(fruit_position[0], fruit_position[1], 10, 10))
 
     if snake_position == fruit_position:
-        print("Jackpot")
-        fruit_spawned = True
+        game_score += 1
+
+        fruit_position = [random.randrange(0, width // snake_block) * snake_block,
+                  random.randrange(1, height // snake_block) * snake_block]
 
     fruit_spawned = False
 
